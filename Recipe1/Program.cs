@@ -115,10 +115,41 @@ class Menu
             Console.WriteLine("Enter '6' to exit");
 
             string choice = Console.ReadLine();
+            switch (choice)
+            {
+                // All code below is using the methods from Recipe to make the menu work
+                case "1":
+                    recipe.EnterInfo();
+                    break;
+                case "2":
+                    recipe.ShowRecipe();
+                    break;
+                case "3":
+                    Console.Write("Enter scaling factor (0.5, 2, or 3): ");
+                    double factor = double.Parse(Console.ReadLine());
+                    recipe.Measurements(factor);
+                    break;
+                case "4":
+                    recipe.Reset();
+                    break;
+                case "5":
+                    recipe.Clear();
+                    break;
+                case "6":
+                    Console.WriteLine("Exiting program...");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Please enter a valid choice.");
+                    break;
+            }
         }
-
     }
 }
+
+
+
+    
+
 
 
 
