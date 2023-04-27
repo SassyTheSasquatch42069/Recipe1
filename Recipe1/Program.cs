@@ -44,7 +44,15 @@
         // Asks the user to enter the amount of ingredients required for the recipe
         Console.Write("Enter the number of ingredients: ");
         int nIngredients = int.Parse(Console.ReadLine());
+
+
+        // Making the arrays fit with the correct size
+        ingredients = new string[nIngredients];
+        quantity = new double[nIngredients];
+        measurement = new string[nIngredients];
+
     }
+
 
 
 }
