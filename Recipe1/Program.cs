@@ -98,5 +98,29 @@
 
 }
 
+class Menu
+{
+    static void Main(string[] args)
+    {
+        // bringing in the class to utilize its methods
+        Recipe recipe = new Recipe();
+        while (true)
+        {
+            // Display the options for the user to pick
+            Console.WriteLine("Enter '1' to enter recipe details");
+            Console.WriteLine("Enter '2' to display recipe");
+            Console.WriteLine("Enter '3' to scale recipe");
+            Console.WriteLine("Enter '4' to reset quantities");
+            Console.WriteLine("Enter '5' to clear recipe");
+            Console.WriteLine("Enter '6' to exit");
+
+            string choice = Console.ReadLine();
+        }
+
+    }
+}
+
+
+
 
 
