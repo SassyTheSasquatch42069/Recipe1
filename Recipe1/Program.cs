@@ -30,5 +30,14 @@
             Console.WriteLine($"- {steps[t]}");
         }
     }
+    public void Measurements(double factor)
+    {
+        // Multiply all the quantities by utilizing the scaling factor
+        for (int v = 0; v < quantity.Length; v++)
+        {
+            quantity[v] *= factor;
+        }
+    }
+
 
 }
