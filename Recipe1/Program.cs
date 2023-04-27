@@ -78,6 +78,16 @@
         }
     }
 
+    public void Reset()
+    {
+        // Reset all the quantities back into their original values
+        for (int h = 0; h < quantity.Length; h++)
+        {
+            quantity[h] /= 2;
+        }
+    }
+
+
 
 
 }
