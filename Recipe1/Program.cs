@@ -70,10 +70,17 @@
         // Making the steps array fit with the correct size
         steps = new string[nSteps];
 
-
-
+        // Ask the user to enter the details for each step of the recipe
+        for (int j = 0; j < nSteps; j++)
+        {
+            Console.Write($"Enter step #{j + 1}: ");
+            steps[j] = Console.ReadLine();
+        }
     }
 
 
 
 }
+
+
+
