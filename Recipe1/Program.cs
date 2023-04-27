@@ -87,8 +87,14 @@
         }
     }
 
-
-
+    public void Clear()
+    {
+        // Reset all the arrays to make them empty
+        ingredients = new string[0];
+        quantity = new double[0];
+        measurement = new string[0];
+        steps = new string[0];
+    }
 
 }
 
