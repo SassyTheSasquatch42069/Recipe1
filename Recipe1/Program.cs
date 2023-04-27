@@ -63,6 +63,11 @@
             measurement[p] = Console.ReadLine();
         }
 
+        // Asks the user to identify the amount of steps in the recipe
+        Console.Write("Enter the number of steps: ");
+        int nSteps = int.Parse(Console.ReadLine());
+
+
     }
 
 
