@@ -22,8 +22,13 @@
         {
             Console.WriteLine($"- {quantity[w]} {measurement[w]} of {ingredients[w]}");
         }
-    
-        
+
+        // Display the steps
+        Console.WriteLine("Steps:");
+        for (int t = 0; t < steps.Length; t++)
+        {
+            Console.WriteLine($"- {steps[t]}");
+        }
     }
 
 }
