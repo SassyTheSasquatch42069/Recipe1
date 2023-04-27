@@ -51,6 +51,18 @@
         quantity = new double[nIngredients];
         measurement = new string[nIngredients];
 
+        // Asks the user to enter the details of each ingredient
+        for (int p = 0; p < nIngredients; p++)
+        {
+            Console.WriteLine($"Enter the details for ingredient #{p + 1}:");
+            Console.Write("Name: ");
+            ingredients[p] = Console.ReadLine();
+            Console.Write("Quantity: ");
+            quantity[p] = double.Parse(Console.ReadLine());
+            Console.Write("Unit of measurement: ");
+            measurement[p] = Console.ReadLine();
+        }
+
     }
 
 
