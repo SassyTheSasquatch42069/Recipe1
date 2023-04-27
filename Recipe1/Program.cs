@@ -39,5 +39,12 @@
         }
     }
 
+    public void EnterInfo()
+    {
+        // Asks the user to enter the amount of ingredients required for the recipe
+        Console.Write("Enter the number of ingredients: ");
+        int nIngredients = int.Parse(Console.ReadLine());
+    }
+
 
 }
