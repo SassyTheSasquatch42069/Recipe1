@@ -67,6 +67,10 @@
         Console.Write("Enter the number of steps: ");
         int nSteps = int.Parse(Console.ReadLine());
 
+        // Making the steps array fit with the correct size
+        steps = new string[nSteps];
+
+
 
     }
 
