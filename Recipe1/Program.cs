@@ -34,23 +34,21 @@ class Recipe
         Steps = new List<string>();
         FoodGroup = new List<string>();
     }
-    public void ShowRecipe()
-    {
-        // Display the ingredients and measurements
-        Console.WriteLine("Ingredients:");
-        for (int w = 0; w < ingredients.Length; w++)
-        {
-            Console.WriteLine($"- {quantity[w]} {measurement[w]} of {ingredients[w]}");
-        }
+    public void EnterInfo()
+    {//try and catch so code doesnt crash if an input is invalid
+        try
+        {//asks the user to enter the recipe name
+            Console.WriteLine("Enter Recipe Name: ");
+            Name = Console.ReadLine();
 
-        // Display the steps
-        Console.WriteLine("Steps:");
-        for (int t = 0; t < steps.Length; t++)
+        }
+        catch (Exception ex)
         {
-            Console.WriteLine($"- {steps[t]}");
+            Console.WriteLine("An error occurred: " + ex.Message);
         }
     }
-    public void Measurements(double factor)
+}
+public void Measurements(double factor)
     {
         // Multiply all the quantities by utilizing the scaling factor
         for (int v = 0; v < quantity.Length; v++)
