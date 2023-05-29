@@ -259,13 +259,110 @@ class Show
     delegate void AlertUserDelegate(string message);
 }
 
+class Program
+{// gui code for the user to interact with
+    static void Main(string[] args)
+    {//calling the lists 
+        List<Recipe> recipes = new List<Recipe>();
+        Show show = new Show(recipes);
+        Measure measure = new Measure();
+        Reset reset = new Reset();
+        Clear clear = new Clear();
+
+        while (true)
+        {//while loop so that the app can run and return back to this start
+            Console.WriteLine("Enter '1' to enter recipe details");
+            Console.WriteLine("Enter '2' to display recipe details");
+            Console.WriteLine("Enter '3' to scale recipe");
+            Console.WriteLine("Enter '4' to reset recipe quantities");
+            Console.WriteLine("Enter '5' to clear recipe");
+            Console.WriteLine("Enter '6' to exit");
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {//switch case so that the user can enter an unlimited amount of recipes
+                case "1":
+                    Recipe recipe = new Recipe();
+                    recipe.EnterInfo();
+                    recipes.Add(recipe);
+                    break;
+                case "2":
+                    show.ShowRecipeNames();
+                    Console.WriteLine("Enter the recipe name:");
+                    string recipeName = Console.ReadLine();
+                    show.ShowRecipeDetails(recipeName);
+                    break;
+
+                case "3":
+                    show.ShowRecipeNames();
+                    Console.WriteLine("Enter the recipe name to scale:");
+                    string recipeNameToScale = Console.ReadLine();
+                    Recipe recipeToScale = recipes.Find(recipe => recipe.Name == recipeNameToScale);
+                    if (recipeToScale != null)
+                    {
+                        Console.WriteLine("Enter the scaling factor:");
+                        double scalingFactor;
+                        while (!double.TryParse(Console.ReadLine(), out scalingFactor))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Invalid input. Please enter a valid scaling factor:");
+                            Console.ResetColor();
+                        }
+                        measure.Measurements(recipeToScale, scalingFactor);
+                        Console.WriteLine("Recipe scaled successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Recipe not found!");
+                    }
+                    break;
+                case "4":
+                    show.ShowRecipeNames();
+                    Console.WriteLine("Enter the recipe name to reset quantities:");
+                    string recipeNameToReset = Console.ReadLine();
+                    Recipe recipeToReset = recipes.Find(recipe => recipe.Name == recipeNameToReset);
+                    if (recipeToReset != null)
+                    {
+                        reset.ResetQuantities(recipeToReset);
+                        Console.WriteLine("Recipe quantities reset successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Recipe not found!");
+                    }
+                    break;
+                case "5":
+                    show.ShowRecipeNames();
+                    Console.WriteLine("Enter the recipe name to clear:");
+                    string recipeNameToClear = Console.ReadLine();
+                    Recipe recipeToClear = recipes.Find(recipe => recipe.Name == recipeNameToClear);
+                    if (recipeToClear != null)
+                    {
+                        clear.ClearRecipe(recipeToClear);
+                        Console.WriteLine("Recipe cleared successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Recipe not found!");
+                    }
+                    break;
+                case "6":
+                    Console.WriteLine("Exiting program...");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Please enter a valid choice.");
+                    break;
+            }
+        }
+    }
+}
 
 
 
 
 
 
-    
+
 
 
 
