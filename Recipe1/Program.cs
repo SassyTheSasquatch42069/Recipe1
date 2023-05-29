@@ -24,13 +24,15 @@ class Recipe
     public List<int> Calories { get; set; }
     public List<string> Steps { get; set; }
     public List<string> FoodGroup { get; set; }
+
     public Recipe()
-    {
-        // Making the arrays empty so that there is space to add info in ingredients, quanitity, measurement and steps.
-        ingredients = new string[0];
-        quantity = new double[0];
-        measurement = new string[0];
-        steps = new string[0];
+    {//Giving the list what input types it can store
+        Ingredients = new List<string>();
+        Quantity = new List<double>();
+        Measurement = new List<string>();
+        Calories = new List<int>();
+        Steps = new List<string>();
+        FoodGroup = new List<string>();
     }
     public void ShowRecipe()
     {
