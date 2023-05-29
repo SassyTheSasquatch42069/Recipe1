@@ -102,7 +102,7 @@ class Menu
 {
     static void Main(string[] args)
     {
-        //CHanges Font colour in console menu
+        //Changes Font colour in console menu
         Console.ForegroundColor = ConsoleColor.Red;
 
         // bringing in the class to utilize its methods
