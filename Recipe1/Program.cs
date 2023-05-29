@@ -141,7 +141,18 @@ class Measure
     }
 }
 
-
+class Reset
+{
+    public void ResetQuantities(Recipe recipe)
+    {
+        List<double> quantity = recipe.Quantity;
+        // Reset all the quantities back into their original values
+        for (int h = 0; h < quantity.Count; h++)
+        {
+            quantity[h] /= 2;
+        }
+    }
+}
 public void EnterInfo()
     {
         // Asks the user to enter the amount of ingredients required for the recipe
