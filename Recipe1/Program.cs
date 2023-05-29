@@ -41,6 +41,9 @@ class Recipe
             Console.WriteLine("Enter Recipe Name: ");
             Name = Console.ReadLine();
 
+            //allows user to enter the ingredients of the recipe
+            Console.Write("Enter the number of ingredients: ");
+            int nIngredients = int.Parse(Console.ReadLine());
         }
         catch (Exception ex)
         {
