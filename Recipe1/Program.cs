@@ -153,6 +153,21 @@ class Reset
         }
     }
 }
+
+class Clear
+{
+    public void ClearRecipe(Recipe recipe)
+    {
+        // Reset all the recipe properties to make them empty
+        recipe.Name = "";
+        recipe.Ingredients.Clear();
+        recipe.Quantity.Clear();
+        recipe.Measurement.Clear();
+        recipe.Calories.Clear();
+        recipe.Steps.Clear();
+        recipe.FoodGroup.Clear();
+    }
+}
 public void EnterInfo()
     {
         // Asks the user to enter the amount of ingredients required for the recipe
