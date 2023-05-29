@@ -44,6 +44,67 @@ class Recipe
             //allows user to enter the ingredients of the recipe
             Console.Write("Enter the number of ingredients: ");
             int nIngredients = int.Parse(Console.ReadLine());
+
+            //for loop so that it can capture all the ingredients involved and to capture calories,quantity,measurement and food group
+            for (int p = 0; p < nIngredients; p++)
+            {
+                Console.WriteLine($"Enter the details for ingredient #{p + 1}:");
+                Console.Write("Name: ");
+                string ingredient = Console.ReadLine();
+                Ingredients.Add(ingredient);
+
+                Console.WriteLine("Enter the number of calories this ingredient has: ");
+                int cal = int.Parse(Console.ReadLine());
+                Calories.Add(cal);
+
+                Console.Write("Quantity: ");
+                double quant = double.Parse(Console.ReadLine());
+                Quantity.Add(quant);
+
+                Console.Write("Unit of measurement: ");
+                string measure = Console.ReadLine();
+                Measurement.Add(measure);
+
+                Console.WriteLine("Select the food group for this ingredient:");
+                Console.WriteLine("1 - Starchy Foods");
+                Console.WriteLine("2 - Vegetables and fruits");
+                Console.WriteLine("3 - Dry beans, peas, lentils, and soya");
+                Console.WriteLine("4 - Chicken, Fish, meat, and eggs");
+                Console.WriteLine("5 - Milk and dairy products");
+                Console.WriteLine("6 - Fats and oil");
+                Console.WriteLine("7 - Water");
+
+                string foodGroupChoice = Console.ReadLine();
+                //switch case for food group choice so that the user can only enter what is given
+                switch (foodGroupChoice)
+                {
+                    case "1":
+                        FoodGroup.Add("Starchy Foods");
+                        break;
+                    case "2":
+                        FoodGroup.Add("Vegetables and fruits");
+                        break;
+                    case "3":
+                        FoodGroup.Add("Dry beans, peas, lentils, and soya");
+                        break;
+                    case "4":
+                        FoodGroup.Add("Chicken, Fish, meat, and eggs");
+                        break;
+                    case "5":
+                        FoodGroup.Add("Milk and dairy products");
+                        break;
+                    case "6":
+                        FoodGroup.Add("Fats and oil");
+                        break;
+                    case "7":
+                        FoodGroup.Add("Water");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid food group choice. Food group set as Other.");
+                        FoodGroup.Add("Other");
+                        break;
+                }
+            }
         }
         catch (Exception ex)
         {
