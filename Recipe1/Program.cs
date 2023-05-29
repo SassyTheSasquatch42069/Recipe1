@@ -128,16 +128,21 @@ class Recipe
         }
     }
 }
-public void Measurements(double factor)
+class Measure
+{//used to change the recipe measurements based on the servings
+    public void Measurements(Recipe recipe, double factor)
     {
-        // Multiply all the quantities by utilizing the scaling factor
-        for (int v = 0; v < quantity.Length; v++)
+        List<double> quantity = recipe.Quantity;
+        // Multiply all the quantities by the scaling factor
+        for (int v = 0; v < quantity.Count; v++)
         {
             quantity[v] *= factor;
         }
     }
+}
 
-    public void EnterInfo()
+
+public void EnterInfo()
     {
         // Asks the user to enter the amount of ingredients required for the recipe
         Console.Write("Enter the number of ingredients: ");
