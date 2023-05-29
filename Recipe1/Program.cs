@@ -195,7 +195,61 @@ class Show
             Console.WriteLine(name);
         }
     }
-}
+
+    public void ShowRecipeDetails(string recipeName)
+    {
+        try
+        {//searches for the recipe that the user inputs
+            Recipe selectedRecipe = recipes.Find(recipe => recipe.Name == recipeName);
+            if (selectedRecipe != null)
+            {//displays the info of the selected recipe
+                Console.WriteLine("Recipe Details:");
+                Console.WriteLine("Ingredients:");
+                for (int i = 0; i < selectedRecipe.Ingredients.Count; i++)
+                {
+                    Console.WriteLine($"{selectedRecipe.Ingredients[i]} - {selectedRecipe.Quantity[i]} {selectedRecipe.Measurement[i]} ({selectedRecipe.FoodGroup[i]})");
+                }
+
+                int totalCalories = CaloriesCalculator.CalculateTotalCalories(selectedRecipe.Calories);
+
+                Console.WriteLine($"Total Calories: {totalCalories} ");
+                //lets the user know the calorie rating in different colors based on the size of the value
+                if (totalCalories < 150)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("This recipe is low in calories.");
+                    Console.ResetColor();
+                }
+                else if (totalCalories >= 150 && totalCalories < 300)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("This recipe is average in calories.");
+                    Console.ResetColor();
+                }
+                else
+                {//alerts the user that the recipe is over 300 calories
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("This recipe is high in calories.");
+                    alertAction?.Invoke("This recipe has more than 300 calories!");
+                    Console.ResetColor();
+                }
+                //displays steps
+                Console.WriteLine("Steps:");
+                for (int i = 0; i < selectedRecipe.Steps.Count; i++)
+                {
+                    Console.WriteLine($"Step #{i + 1}: {selectedRecipe.Steps[i]}");
+                }
+            }
+            else
+            {//message if invalid recipe is entered
+                Console.WriteLine("Recipe not found!");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
 public void EnterInfo()
     {
         // Asks the user to enter the amount of ingredients required for the recipe
