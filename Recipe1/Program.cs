@@ -1,4 +1,20 @@
-﻿class Recipe
+﻿using System;
+using System.Collections.Generic;
+
+class CaloriesCalculator
+{//Code to calculate the total calories from the list calories
+    public static int CalculateTotalCalories(List<int> calories)
+    {
+        int totalCalories = 0;
+        foreach (int cal in calories)
+        {
+            totalCalories += cal;
+        }
+        return totalCalories;
+    }
+}
+
+class Recipe
 {
     // Making the array
     private string[] ingredients;
