@@ -168,7 +168,19 @@ class Clear
         recipe.FoodGroup.Clear();
     }
 }
-public void EnterInfo()
+
+class Show
+{//calling the lists and alert into the class
+    private List<Recipe> recipes;
+    private Action<string> alertAction;
+
+    public Show(List<Recipe> recipes)
+    {
+        this.recipes = recipes;
+        alertAction = AlertUser;
+    }
+}
+    public void EnterInfo()
     {
         // Asks the user to enter the amount of ingredients required for the recipe
         Console.Write("Enter the number of ingredients: ");
