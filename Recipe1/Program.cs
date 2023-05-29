@@ -105,6 +105,22 @@ class Recipe
                         break;
                 }
             }
+            //steps involved in the recipe is added here
+            Console.Write("Enter the number of steps: ");
+            int nSteps;
+            while (!int.TryParse(Console.ReadLine(), out nSteps))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Invalid input. Please enter a valid number of steps:");
+                Console.ResetColor();
+            }
+
+            for (int j = 0; j < nSteps; j++)
+            {
+                Console.Write($"Enter step #{j + 1}: ");
+                string step = Console.ReadLine();
+                Steps.Add(step);
+            }
         }
         catch (Exception ex)
         {
