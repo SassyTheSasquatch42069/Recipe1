@@ -16,12 +16,14 @@ class CaloriesCalculator
 
 class Recipe
 {
-    // Making the array
-    private string[] ingredients;
-    private double[] quantity;
-    private string[] measurement;
-    private string[] steps;
-
+    // Making the list with get and set
+    public string Name { get; set; }
+    public List<string> Ingredients { get; set; }
+    public List<double> Quantity { get; set; }
+    public List<string> Measurement { get; set; }
+    public List<int> Calories { get; set; }
+    public List<string> Steps { get; set; }
+    public List<string> FoodGroup { get; set; }
     public Recipe()
     {
         // Making the arrays empty so that there is space to add info in ingredients, quanitity, measurement and steps.
