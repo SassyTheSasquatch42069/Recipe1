@@ -179,8 +179,24 @@ class Show
         this.recipes = recipes;
         alertAction = AlertUser;
     }
+
+
+    public void ShowRecipeNames()
+    {//displays the recipe name in alphabetical order
+        Console.WriteLine("Recipe Names:");
+        List<string> sortedNames = new List<string>();
+        foreach (Recipe recipe in recipes)
+        {
+            sortedNames.Add(recipe.Name);
+        }
+        sortedNames.Sort(); // Sort the recipe names alphabetically
+        foreach (string name in sortedNames)
+        {
+            Console.WriteLine(name);
+        }
+    }
 }
-    public void EnterInfo()
+public void EnterInfo()
     {
         // Asks the user to enter the amount of ingredients required for the recipe
         Console.Write("Enter the number of ingredients: ");
