@@ -44,3 +44,36 @@ The Show class is responsible for displaying recipe information to the user. It 
 The Program class contains the Main method, which serves as the entry point for the application. It creates instances of Show, Measure, Reset, and Clear classes. It then enters a while loop that displays a menu to the user and performs actions based on the user's choice. The available actions include entering recipe details, displaying recipe details, scaling recipe quantities, resetting recipe quantities, clearing recipes, and exiting the program.
 
 Overall, the code provides a basic recipe management system where users can add, view, scale, reset, and clear recipes.
+
+Final Part update:
+In the final update, the main features and functionailty changes was the following:
+Instead of using basic cs code to run the app, the app now runs on a xaml gui that is much better at displaying everything the user needs to see in order to use the app.
+
+This is the explanation to the new code of the update:
+MainWindow:
+
+Two labels were added next to the buttons.
+The label next to the "Create Recipe" button reads "Click here to create a new recipe".
+The label next to the "Display Recipes" button reads "Click Display to show your saved recipes".
+The buttons were repositioned closer to the right side of the window.
+MainWindow Heading:
+
+A label was added at the top center of the window.
+The label displays the text "Welcome to Recipe App".
+The text is in bold and larger than average size.
+Background Color:
+
+The background color of the MainWindow was changed to a peach color.
+DisplayRecipesWindow:
+
+The step number and checkbox were added to the Steps section.
+Each step is displayed with its corresponding step number and a checkbox.
+Exception Handling:
+
+Exception handling was added to the RecipeWindow.
+The recipe name input is validated to ensure it only contains string values.
+If the recipe name is empty or contains non-letter characters, an appropriate error message is displayed.
+Error messages are displayed using MessageBox.
+These modifications enhance the user interface of the Recipe app, providing clear instructions, improved layout, and error handling for the recipe name input.
+
+The user could enter recipes and its details such as ingredients, steps, calories and foodgroups. The app still has the calories warining message once a recipe that is entered has 300 calories or more. This then gets saved and can be displayed wehn the user clicks the display recipe button. This takes the user to a page with the recipes in a combobox in alphabetical order, once the user clicks a recipe, they are provided with the info related to the recipe. It also has a total calories at the bottom of the window. Then the user can click close on the display window and return to the menu and exit.
